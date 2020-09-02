@@ -1,7 +1,7 @@
 package com.borikov.task3.composite;
 
 public interface Component {
-    void operation();
+    String operation();
 
     void add(Component component);
 

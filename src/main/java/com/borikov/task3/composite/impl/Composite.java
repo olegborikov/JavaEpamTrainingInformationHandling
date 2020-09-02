@@ -7,22 +7,29 @@ import java.util.List;
 
 public class Composite implements Component {
     private List<Component> components = new ArrayList<>();
+    private CompositeType compositeType;
+
+    public Composite(CompositeType compositeType) {
+        this.compositeType = compositeType;
+    }
 
     @Override
-    public void operation() {
+    public String operation() {
+        StringBuilder a = new StringBuilder();
         for (Component component : components) {
-            component.operation();
+            a.append(component.operation());
         }
+        return a.toString();
     }
 
     @Override
     public void add(Component component) {
-        component.add(component);
+        components.add(component);
     }
 
     @Override
     public void remove(Component component) {
-        component.remove(component);
+        components.remove(component);
     }
 
     @Override

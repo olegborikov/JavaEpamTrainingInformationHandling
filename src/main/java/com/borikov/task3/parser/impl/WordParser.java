@@ -1,20 +1,22 @@
 package com.borikov.task3.parser.impl;
 
+import com.borikov.task3.composite.Component;
+import com.borikov.task3.composite.impl.Leaf;
+import com.borikov.task3.composite.impl.SymbolType;
 import com.borikov.task3.parser.AbstractParser;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class WordParser extends AbstractParser {
-    private static final String WORD_DELIMITER = ".";
     @Override
-    public List<String> parse(List<String> text) {
-        List<String> textParsed = new ArrayList<>();
-        for (String word : text) {
-            String[] letters = word.split("");
-            textParsed.addAll(Arrays.asList(letters));
+    public List<Component> parse(String word) {
+        List<Component> symbols = new ArrayList<>();
+        char[] wordSymbols = word.toCharArray();
+        for (char wordSymbol : wordSymbols) {
+            Leaf leaf = new Leaf(wordSymbol, SymbolType.LETTER);
+            symbols.add(leaf);
         }
-        return textParsed;
+        return symbols;
     }
 }
