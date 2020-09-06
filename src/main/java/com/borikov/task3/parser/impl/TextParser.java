@@ -1,29 +1,22 @@
 package com.borikov.task3.parser.impl;
 
-import com.borikov.task3.composite.Component;
-import com.borikov.task3.composite.impl.Composite;
-import com.borikov.task3.composite.impl.CompositeType;
+import com.borikov.task3.composite.TextComponent;
+import com.borikov.task3.composite.TextComponentType;
+import com.borikov.task3.composite.impl.TextComposite;
 import com.borikov.task3.parser.AbstractParser;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class TextParser extends AbstractParser {
     private final AbstractParser parser = new ParagraphParser();
-    private static final String PARAGRAPH_DELIMITER = "\n";
+    private static final String TEXT_DELIMITER = "\n";
 
     @Override
-    public List<Component> parse(String text) {
-        List<Component> paragraphs = new ArrayList<>();
-        String[] textParagraphs = text.split(PARAGRAPH_DELIMITER);
-        for (String textParagraph : textParagraphs) {
-            List<Component> sentences = parser.parse(textParagraph);
-            Composite paragraph = new Composite(CompositeType.PARAGRAPH);
-            for (Component sentence : sentences) {
-                paragraph.add(sentence);
-            }
-            paragraphs.add(paragraph);
+    public TextComponent parse(String text) {
+        TextComponent textComponent = new TextComposite(TextComponentType.TEXT);
+        String[] paragraphs = text.split(TEXT_DELIMITER);
+        for (String paragraph : paragraphs) {
+            TextComponent paragraphComponent = parser.parse(paragraph);
+            textComponent.add(paragraphComponent);
         }
-        return paragraphs;
+        return textComponent;
     }
 }

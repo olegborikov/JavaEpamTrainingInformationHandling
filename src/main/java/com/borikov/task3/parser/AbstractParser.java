@@ -1,9 +1,7 @@
 package com.borikov.task3.parser;
 
-import com.borikov.task3.composite.Component;
-
-import java.util.List;
+import com.borikov.task3.composite.TextComponent;
 
 public abstract class AbstractParser {
-    public abstract List<Component> parse(String text);
+    public abstract TextComponent parse(String text);
 }
