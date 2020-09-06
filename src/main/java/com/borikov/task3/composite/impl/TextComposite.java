@@ -10,7 +10,6 @@ public class TextComposite implements TextComponent {
     private final List<TextComponent> textComponents;
     private final TextComponentType textComponentType;
     private static final String PARAGRAPH_DELIMITER = "\n";
-    private static final String SENTENCE_DELIMITER = ".";
     private static final String LEXEME_DELIMITER = " ";
 
     public TextComposite(TextComponentType textComponentType) {
@@ -70,9 +69,6 @@ public class TextComposite implements TextComponent {
                 switch (textComponent.getTextComponentType()) {
                     case PARAGRAPH:
                         sb.append(PARAGRAPH_DELIMITER);
-                        break;
-                    case SENTENCE:
-                        sb.append(SENTENCE_DELIMITER);
                         break;
                     case LEXEME:
                         sb.append(LEXEME_DELIMITER);
