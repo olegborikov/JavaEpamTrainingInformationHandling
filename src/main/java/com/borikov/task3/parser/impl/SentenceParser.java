@@ -7,7 +7,7 @@ import com.borikov.task3.parser.AbstractParser;
 
 public class SentenceParser extends AbstractParser {
     private final AbstractParser parser = new LexemeParser();
-    private static final String SENTENCE_DELIMITER = "\\s";
+    private static final String SENTENCE_DELIMITER = "\\s+";
 
     @Override
     public TextComponent parse(String sentence) {

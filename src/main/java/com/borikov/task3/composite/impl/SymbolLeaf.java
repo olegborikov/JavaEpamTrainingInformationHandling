@@ -7,6 +7,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.List;
+
 public class SymbolLeaf implements TextComponent {
     private static final Logger LOGGER = LogManager.getLogger();
     private final char symbol;
@@ -42,6 +44,12 @@ public class SymbolLeaf implements TextComponent {
     @Override
     public TextComponentType getTextComponentType() {
         LOGGER.log(Level.WARN, "Method \"getTextComponentType\" is not supported for this class");
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<TextComponent> getTextComponents() {
+        LOGGER.log(Level.WARN, "Method \"getTextComponents\" is not supported for this class");
         throw new UnsupportedOperationException();
     }
 

@@ -4,6 +4,7 @@ import com.borikov.task3.composite.TextComponent;
 import com.borikov.task3.composite.TextComponentType;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TextComposite implements TextComponent {
@@ -19,6 +20,10 @@ public class TextComposite implements TextComponent {
 
     public TextComponentType getTextComponentType() {
         return textComponentType;
+    }
+
+    public List<TextComponent> getTextComponents() {
+        return Collections.unmodifiableList(textComponents);
     }
 
     @Override
@@ -69,6 +74,9 @@ public class TextComposite implements TextComponent {
                 switch (textComponent.getTextComponentType()) {
                     case PARAGRAPH:
                         sb.append(PARAGRAPH_DELIMITER);
+                        break;
+                    case SENTENCE:
+                        sb.append(".");
                         break;
                     case LEXEME:
                         sb.append(LEXEME_DELIMITER);

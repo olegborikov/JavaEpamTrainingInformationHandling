@@ -1,5 +1,7 @@
 package com.borikov.task3.composite;
 
+import java.util.List;
+
 public interface TextComponent {
     void add(TextComponent textComponent);
 
@@ -8,4 +10,6 @@ public interface TextComponent {
     TextComponent getChild(int index);
 
     TextComponentType getTextComponentType();
+
+    List<TextComponent> getTextComponents();
 }

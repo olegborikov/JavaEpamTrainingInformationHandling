@@ -5,7 +5,7 @@ import com.borikov.task3.composite.TextComponent;
 public interface TextService {
     TextComponent sortParagraphsByAmountOfSentences(TextComponent text);
 
-    TextComponent sortParagraphsByAmountOfLexeme(TextComponent text);
+    TextComponent sortSentencesByAmountOfLexeme(TextComponent text);
 
-    TextComponent sortParagraphsByAmountOfWord(TextComponent text);
+    TextComponent sortSentencesByAmountOfWord(TextComponent text);
 }
