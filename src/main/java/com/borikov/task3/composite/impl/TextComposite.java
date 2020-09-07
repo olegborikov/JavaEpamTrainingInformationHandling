@@ -75,9 +75,6 @@ public class TextComposite implements TextComponent {
                     case PARAGRAPH:
                         sb.append(PARAGRAPH_DELIMITER);
                         break;
-                    case SENTENCE:
-                        sb.append(".");
-                        break;
                     case LEXEME:
                         sb.append(LEXEME_DELIMITER);
                         break;

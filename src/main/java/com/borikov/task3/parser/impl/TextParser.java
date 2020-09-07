@@ -7,7 +7,7 @@ import com.borikov.task3.parser.AbstractParser;
 
 public class TextParser extends AbstractParser {
     private final AbstractParser parser = new ParagraphParser();
-    private static final String TEXT_DELIMITER = "\n";
+    private static final String TEXT_DELIMITER = "\n\\s*";
 
     @Override
     public TextComponent parse(String text) {

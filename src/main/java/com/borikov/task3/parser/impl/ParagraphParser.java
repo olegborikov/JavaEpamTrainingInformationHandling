@@ -7,7 +7,7 @@ import com.borikov.task3.parser.AbstractParser;
 
 public class ParagraphParser extends AbstractParser {
     private final AbstractParser parser = new SentenceParser();
-    private static final String PARAGRAPH_DELIMITER = "\\.|\\?|\\.{3}|!";// TODO: 07.09.2020 refactor
+    private static final String PARAGRAPH_DELIMITER = "(?<=\\.)\\s|(?<=\\?)\\s|(?<=!)\\s|(?<=\\.{3})\\s+";
 
     @Override
     public TextComponent parse(String paragraph) {

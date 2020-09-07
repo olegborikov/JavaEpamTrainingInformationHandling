@@ -16,11 +16,5 @@ public class Main {
         System.out.println(textComponent);
         TextService textService = new TextServiceImpl();
         System.out.println(textService.sortSentencesByAmountOfLexeme(textComponent.getChild(3)));
-    /*    CustomFileReader customFileReader = new CustomFileReader();
-        String text = customFileReader.readText("input/data.txt");
-        System.out.println(text);
-        TextParser textParser = new TextParser();
-        TextComponent textComponent = textParser.parse(text);
-        System.out.println( textComponent.getTextComponents().get(0).getTextComponents().get(0));*/
     }
 }
