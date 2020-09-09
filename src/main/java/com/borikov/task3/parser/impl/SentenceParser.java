@@ -3,10 +3,12 @@ package com.borikov.task3.parser.impl;
 import com.borikov.task3.composite.TextComponent;
 import com.borikov.task3.composite.TextComponentType;
 import com.borikov.task3.composite.impl.TextComposite;
+import com.borikov.task3.interpreter.TextInterpreter;
 import com.borikov.task3.parser.AbstractParser;
 
 public class SentenceParser extends AbstractParser {
     private final AbstractParser parser = new LexemeParser();
+    private final TextInterpreter interpreter = new TextInterpreter();
     private static final String SENTENCE_DELIMITER = "\\s+";
 
     @Override
@@ -14,7 +16,8 @@ public class SentenceParser extends AbstractParser {
         TextComponent sentenceComponent = new TextComposite(TextComponentType.SENTENCE);
         String[] lexemes = sentence.split(SENTENCE_DELIMITER);
         for (String lexeme : lexemes) {
-            TextComponent lexemeComponent = parser.parse(lexeme);
+            String expressionSolution = interpreter.interpretLexeme(lexeme);
+            TextComponent lexemeComponent = parser.parse(expressionSolution);
             sentenceComponent.add(lexemeComponent);
         }
         return sentenceComponent;
