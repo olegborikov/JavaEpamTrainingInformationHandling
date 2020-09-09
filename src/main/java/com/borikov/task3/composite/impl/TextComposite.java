@@ -18,12 +18,12 @@ public class TextComposite implements TextComponent {
         textComponents = new ArrayList<>();
     }
 
-    public TextComponentType getTextComponentType() {
-        return textComponentType;
-    }
-
     public List<TextComponent> getTextComponents() {
         return Collections.unmodifiableList(textComponents);
+    }
+
+    public TextComponentType getTextComponentType() {
+        return textComponentType;
     }
 
     @Override

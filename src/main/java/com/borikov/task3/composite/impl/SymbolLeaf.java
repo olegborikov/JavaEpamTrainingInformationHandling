@@ -19,6 +19,10 @@ public class SymbolLeaf implements TextComponent {
         this.symbolType = symbolType;
     }
 
+    public char getSymbol() {
+        return symbol;
+    }
+
     public SymbolType getSymbolType() {
         return symbolType;
     }
