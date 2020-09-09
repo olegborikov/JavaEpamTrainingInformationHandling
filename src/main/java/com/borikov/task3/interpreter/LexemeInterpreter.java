@@ -8,10 +8,11 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-public class TextInterpreter {
+public class LexemeInterpreter {
     private static final String ENGINE_NAME = "js";
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String EXPRESSION_REGEX = ".*\\d+.*";
+    private static final String EXPRESSION_REGEX =
+            "^[(]?[-]?([0-9]+)[)]??([(]?([-+/*]([0-9]))?([.,][0-9]+)?[)]?)*$";
 
     public String interpretLexeme(String lexeme) {
         String expressionSolution = lexeme;
