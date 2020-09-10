@@ -8,7 +8,6 @@ import com.borikov.task3.exception.IncorrectDataException;
 import com.borikov.task3.service.TextService;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class TextServiceImpl implements TextService {
@@ -20,7 +19,7 @@ public class TextServiceImpl implements TextService {
         }
         TextComponent sortedText = new TextComposite(TextComponentType.TEXT);
         List<TextComponent> paragraphs = new ArrayList<>(text.getTextComponents());
-        paragraphs.sort(new ParagraphSentenceLengthComparator());
+        paragraphs.sort(new ParagraphSentenceAmountComparator());
         for (TextComponent paragraph : paragraphs) {
             sortedText.add(paragraph);
         }
@@ -28,14 +27,14 @@ public class TextServiceImpl implements TextService {
     }
 
     @Override
-    public TextComponent sortSentencesByfWordLength(TextComponent paragraph)
+    public TextComponent sortSentencesByMaxWordLength(TextComponent paragraph)
             throws IncorrectDataException {
         if (!paragraph.getTextComponentType().equals(TextComponentType.PARAGRAPH)) {
             throw new IncorrectDataException("Incorrect text component type");
         }
         TextComponent sortedParagraph = new TextComposite(TextComponentType.PARAGRAPH);
         List<TextComponent> sentences = new ArrayList<>(paragraph.getTextComponents());
-        sentences.sort(new SentenceWordLengthComparator());
+        sentences.sort(new SentenceMaxWordLengthComparator());
         for (TextComponent sentence : sentences) {
             sortedParagraph.add(sentence);
         }
@@ -43,14 +42,14 @@ public class TextServiceImpl implements TextService {
     }
 
     @Override
-    public TextComponent sortSentencesByLexemeLength(TextComponent paragraph)
+    public TextComponent sortSentencesByMaxLexemeLength(TextComponent paragraph)
             throws IncorrectDataException {
         if (!paragraph.getTextComponentType().equals(TextComponentType.PARAGRAPH)) {
             throw new IncorrectDataException("Incorrect text component type");
         }
         TextComponent sortedParagraph = new TextComposite(TextComponentType.PARAGRAPH);
         List<TextComponent> sentences = new ArrayList<>(paragraph.getTextComponents());
-        sentences.sort(new SentenceLexemeLengthComparator());
+        sentences.sort(new SentenceMaxLexemeLengthComparator());
         for (TextComponent sentence : sentences) {
             sortedParagraph.add(sentence);
         }
@@ -65,7 +64,7 @@ public class TextServiceImpl implements TextService {
         }
         TextComponent sortedParagraph = new TextComposite(TextComponentType.SENTENCE);
         List<TextComponent> lexemes = new ArrayList<>(sentence.getTextComponents());
-        lexemes.sort(new LexemeSymbolComparator(symbol).thenComparing(new LexemeAlphabetComparator()));
+        lexemes.sort(new LexemeSymbolEntranceComparator(symbol).thenComparing(new LexemeAlphabetComparator()));
         for (TextComponent lexeme : lexemes) {
             sortedParagraph.add(lexeme);
         }

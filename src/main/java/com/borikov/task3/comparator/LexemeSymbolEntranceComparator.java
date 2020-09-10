@@ -5,10 +5,10 @@ import com.borikov.task3.composite.impl.SymbolLeaf;
 
 import java.util.Comparator;
 
-public class LexemeSymbolComparator implements Comparator<TextComponent> {
+public class LexemeSymbolEntranceComparator implements Comparator<TextComponent> {
     private final char symbol;
 
-    public LexemeSymbolComparator(char symbol) {
+    public LexemeSymbolEntranceComparator(char symbol) {
         this.symbol = symbol;
     }
 

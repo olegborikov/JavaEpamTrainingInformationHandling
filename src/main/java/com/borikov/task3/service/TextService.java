@@ -7,10 +7,10 @@ public interface TextService {
     TextComponent sortParagraphsByAmountOfSentences(TextComponent text)
             throws IncorrectDataException;
 
-    TextComponent sortSentencesByfWordLength(TextComponent paragraph)
+    TextComponent sortSentencesByMaxWordLength(TextComponent paragraph)
             throws IncorrectDataException;
 
-    TextComponent sortSentencesByLexemeLength(TextComponent paragraph)
+    TextComponent sortSentencesByMaxLexemeLength(TextComponent paragraph)
             throws IncorrectDataException;
 
     TextComponent sortLexemesByEntryOfSymbol(TextComponent sentence, char symbol)
