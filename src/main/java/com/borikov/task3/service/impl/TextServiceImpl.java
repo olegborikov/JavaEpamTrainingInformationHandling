@@ -64,7 +64,8 @@ public class TextServiceImpl implements TextService {
         }
         TextComponent sortedParagraph = new TextComposite(TextComponentType.SENTENCE);
         List<TextComponent> lexemes = new ArrayList<>(sentence.getTextComponents());
-        lexemes.sort(new LexemeSymbolEntranceComparator(symbol).thenComparing(new LexemeAlphabetComparator()));
+        lexemes.sort(new LexemeSymbolEntranceComparator(symbol).thenComparing(
+                new LexemeAlphabetComparator()));
         for (TextComponent lexeme : lexemes) {
             sortedParagraph.add(lexeme);
         }

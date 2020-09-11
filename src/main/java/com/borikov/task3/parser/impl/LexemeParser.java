@@ -5,9 +5,9 @@ import com.borikov.task3.composite.TextComponent;
 import com.borikov.task3.composite.TextComponentType;
 import com.borikov.task3.composite.impl.SymbolLeaf;
 import com.borikov.task3.composite.impl.TextComposite;
-import com.borikov.task3.parser.AbstractParser;
+import com.borikov.task3.parser.BaseParser;
 
-public class LexemeParser extends AbstractParser {
+public class LexemeParser implements BaseParser {
     private static final String PUNCTUATION = "\\p{Punct}";
 
     @Override

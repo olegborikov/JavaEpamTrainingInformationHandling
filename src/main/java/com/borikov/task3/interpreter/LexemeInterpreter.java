@@ -19,7 +19,8 @@ public class LexemeInterpreter {
         if (lexeme.matches(EXPRESSION_REGEX)) {
             try {
                 ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
-                ScriptEngine engine = scriptEngineManager.getEngineByExtension(ENGINE_NAME);
+                ScriptEngine engine =
+                        scriptEngineManager.getEngineByExtension(ENGINE_NAME);
                 expressionSolution = engine.eval(lexeme).toString();
             } catch (ScriptException e) {
                 LOGGER.log(Level.WARN, "Error with lexeme expression", e);

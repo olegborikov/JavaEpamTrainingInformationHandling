@@ -3,11 +3,12 @@ package com.borikov.task3.parser.impl;
 import com.borikov.task3.composite.TextComponent;
 import com.borikov.task3.composite.TextComponentType;
 import com.borikov.task3.composite.impl.TextComposite;
-import com.borikov.task3.parser.AbstractParser;
+import com.borikov.task3.parser.BaseParser;
 
-public class ParagraphParser extends AbstractParser {
-    private final AbstractParser parser = new SentenceParser();
-    private static final String PARAGRAPH_DELIMITER = "(?<=\\.)\\s|(?<=\\?)\\s|(?<=!)\\s|(?<=\\.{3})\\s+";
+public class ParagraphParser implements BaseParser {
+    private final BaseParser parser = new SentenceParser();
+    private static final String PARAGRAPH_DELIMITER =
+            "(?<=\\.)\\s|(?<=\\?)\\s|(?<=!)\\s|(?<=\\.{3})\\s+";
 
     @Override
     public TextComponent parse(String paragraph) {

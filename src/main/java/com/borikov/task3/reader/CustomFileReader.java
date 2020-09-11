@@ -13,12 +13,12 @@ import java.util.stream.Stream;
 
 public class CustomFileReader {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String TEXT_DELIMITER = "\n";
+    private static final String LINE_DELIMITER = "\n";
 
     public String readText(String fileName) {
         Path path = Paths.get(fileName);
         try (Stream<String> linedTextStream = Files.lines(path)) {
-            String text = linedTextStream.collect(Collectors.joining(TEXT_DELIMITER));
+            String text = linedTextStream.collect(Collectors.joining(LINE_DELIMITER));
             return text;
         } catch (IOException e) {
             LOGGER.log(Level.ERROR, "File is not exists", e);

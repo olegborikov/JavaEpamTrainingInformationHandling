@@ -14,16 +14,16 @@ public class LexemeSymbolEntranceComparator implements Comparator<TextComponent>
 
     @Override
     public int compare(TextComponent o1, TextComponent o2) {
-        int amountOfEntrance1 = findAmountOfEntrance(o1);
-        int amountOfEntrance2 = findAmountOfEntrance(o2);
-        return Integer.compare(amountOfEntrance1, amountOfEntrance2);
+        int amountOfEntrances1 = findAmountOfEntrance(o1);
+        int amountOfEntrances2 = findAmountOfEntrance(o2);
+        return Integer.compare(amountOfEntrances1, amountOfEntrances2);
     }
 
     private int findAmountOfEntrance(TextComponent textComponent) {
-        int amountOfEntrance = (int) textComponent.getTextComponents()
+        int amountOfEntrances = (int) textComponent.getTextComponents()
                 .stream().filter(t1 -> t1 instanceof SymbolLeaf)
                 .map(t2 -> (SymbolLeaf) t2)
                 .filter(t -> t.getSymbol() == symbol).count();
-        return amountOfEntrance;
+        return amountOfEntrances;
     }
 }

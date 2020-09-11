@@ -49,9 +49,10 @@ public class LexemeSymbolEntranceComparatorTest {
     }
 
     @Test(dataProvider = "comparePositiveData")
-    public void comparePositiveTest(
-            TextComponent textComponent1, TextComponent textComponent2, char symbol, int expected) {
-        LexemeSymbolEntranceComparator lexemeSymbolEntranceComparator = new LexemeSymbolEntranceComparator(symbol);
+    public void comparePositiveTest(TextComponent textComponent1,
+                                    TextComponent textComponent2, char symbol, int expected) {
+        LexemeSymbolEntranceComparator lexemeSymbolEntranceComparator =
+                new LexemeSymbolEntranceComparator(symbol);
         int actual = lexemeSymbolEntranceComparator.compare(textComponent1, textComponent2);
         assertEquals(actual, expected);
     }
@@ -93,9 +94,10 @@ public class LexemeSymbolEntranceComparatorTest {
     }
 
     @Test(dataProvider = "compareNegativeData")
-    public void compareNegativeTest(
-            TextComponent textComponent1, TextComponent textComponent2, char symbol, int expected) {
-        LexemeSymbolEntranceComparator lexemeSymbolEntranceComparator = new LexemeSymbolEntranceComparator(symbol);
+    public void compareNegativeTest(TextComponent textComponent1,
+                                    TextComponent textComponent2, char symbol, int expected) {
+        LexemeSymbolEntranceComparator lexemeSymbolEntranceComparator =
+                new LexemeSymbolEntranceComparator(symbol);
         int actual = lexemeSymbolEntranceComparator.compare(textComponent1, textComponent2);
         assertNotEquals(actual, expected);
     }

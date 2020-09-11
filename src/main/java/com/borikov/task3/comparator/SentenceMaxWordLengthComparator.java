@@ -14,8 +14,8 @@ public class SentenceMaxWordLengthComparator implements Comparator<TextComponent
         List<TextComponent> lexemes2 = o2.getTextComponents();
         TextComponent maxWord1 = getMaxWord(lexemes1);
         TextComponent maxWord2 = getMaxWord(lexemes2);
-        int wordLength1 =getWordLength(maxWord1);
-        int wordLength2 =getWordLength(maxWord2);
+        int wordLength1 = getWordLength(maxWord1);
+        int wordLength2 = getWordLength(maxWord2);
         return Integer.compare(wordLength1, wordLength2);
     }
 
@@ -30,7 +30,8 @@ public class SentenceMaxWordLengthComparator implements Comparator<TextComponent
     }
 
     private int getWordLength(TextComponent word) {
-        int length = (int) word.getTextComponents().stream().filter(t1 -> t1 instanceof SymbolLeaf)
+        int length = (int) word.getTextComponents().stream()
+                .filter(t1 -> t1 instanceof SymbolLeaf)
                 .map(t2 -> (SymbolLeaf) t2)
                 .filter(t3 -> t3.getSymbolType() == SymbolType.LETTER)
                 .count();

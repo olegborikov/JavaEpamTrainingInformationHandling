@@ -102,7 +102,8 @@ public class SentenceMaxLexemeLengthComparatorTest {
     }
 
     @Test(dataProvider = "comparePositiveData")
-    public void comparePositiveTest(TextComponent textComponent1, TextComponent textComponent2, int expected) {
+    public void comparePositiveTest(TextComponent textComponent1,
+                                    TextComponent textComponent2, int expected) {
         int actual = sentenceMaxLexemeLengthComparator.compare(textComponent1, textComponent2);
         assertEquals(actual, expected);
     }
@@ -188,7 +189,8 @@ public class SentenceMaxLexemeLengthComparatorTest {
     }
 
     @Test(dataProvider = "compareNegativeData")
-    public void compareNegativeTest(TextComponent textComponent1, TextComponent textComponent2, int expected) {
+    public void compareNegativeTest(TextComponent textComponent1,
+                                    TextComponent textComponent2, int expected) {
         int actual = sentenceMaxLexemeLengthComparator.compare(textComponent1, textComponent2);
         assertNotEquals(actual, expected);
     }

@@ -61,7 +61,8 @@ public class TextComposite implements TextComponent {
     @Override
     public int hashCode() {
         int result = textComponents != null ? textComponents.hashCode() : 0;
-        result = 31 * result + (textComponentType != null ? textComponentType.hashCode() : 0);
+        result = 31 * result + (textComponentType != null
+                ? textComponentType.hashCode() : 0);
         return result;
     }
 
@@ -72,12 +73,8 @@ public class TextComposite implements TextComponent {
             sb.append(textComponent.toString());
             if (textComponent instanceof TextComposite) {
                 switch (textComponent.getTextComponentType()) {
-                    case PARAGRAPH:
-                        sb.append(PARAGRAPH_DELIMITER);
-                        break;
-                    case LEXEME:
-                        sb.append(LEXEME_DELIMITER);
-                        break;
+                    case PARAGRAPH -> sb.append(PARAGRAPH_DELIMITER);
+                    case LEXEME -> sb.append(LEXEME_DELIMITER);
                 }
             }
         }

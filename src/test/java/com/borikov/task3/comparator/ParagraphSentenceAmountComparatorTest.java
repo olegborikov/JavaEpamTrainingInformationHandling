@@ -95,11 +95,11 @@ public class ParagraphSentenceAmountComparatorTest {
         textComponent7.add(textComponent6);
         TextComponent textComponent8 = new TextComposite(TextComponentType.LEXEME);
         SymbolLeaf symbolLeaf27 = new SymbolLeaf('H', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf28= new SymbolLeaf('e', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf29= new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf30= new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf31= new SymbolLeaf('o', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf32= new SymbolLeaf(',', SymbolType.PUNCTUATION);
+        SymbolLeaf symbolLeaf28 = new SymbolLeaf('e', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf29 = new SymbolLeaf('l', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf30 = new SymbolLeaf('l', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf31 = new SymbolLeaf('o', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf32 = new SymbolLeaf(',', SymbolType.PUNCTUATION);
         textComponent8.add(symbolLeaf27);
         textComponent8.add(symbolLeaf28);
         textComponent8.add(symbolLeaf29);
@@ -116,8 +116,8 @@ public class ParagraphSentenceAmountComparatorTest {
     }
 
     @Test(dataProvider = "comparePositiveData")
-    public void comparePositiveTest(
-            TextComponent textComponent1, TextComponent textComponent2, int expected) {
+    public void comparePositiveTest(TextComponent textComponent1,
+                                    TextComponent textComponent2, int expected) {
         int actual = paragraphSentenceAmountComparator.compare(textComponent1, textComponent2);
         assertEquals(actual, expected);
     }
@@ -191,11 +191,11 @@ public class ParagraphSentenceAmountComparatorTest {
         textComponent7.add(textComponent6);
         TextComponent textComponent8 = new TextComposite(TextComponentType.LEXEME);
         SymbolLeaf symbolLeaf27 = new SymbolLeaf('H', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf28= new SymbolLeaf('e', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf29= new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf30= new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf31= new SymbolLeaf('o', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf32= new SymbolLeaf(',', SymbolType.PUNCTUATION);
+        SymbolLeaf symbolLeaf28 = new SymbolLeaf('e', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf29 = new SymbolLeaf('l', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf30 = new SymbolLeaf('l', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf31 = new SymbolLeaf('o', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf32 = new SymbolLeaf(',', SymbolType.PUNCTUATION);
         textComponent8.add(symbolLeaf27);
         textComponent8.add(symbolLeaf28);
         textComponent8.add(symbolLeaf29);
@@ -212,8 +212,8 @@ public class ParagraphSentenceAmountComparatorTest {
     }
 
     @Test(dataProvider = "compareNegativeData")
-    public void compareNegativeTest(
-            TextComponent textComponent1, TextComponent textComponent2, int expected) {
+    public void compareNegativeTest(TextComponent textComponent1,
+                                    TextComponent textComponent2, int expected) {
         int actual = paragraphSentenceAmountComparator.compare(textComponent1, textComponent2);
         assertNotEquals(actual, expected);
     }
