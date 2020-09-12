@@ -1,6 +1,6 @@
 package com.borikov.task3.comparator;
 
-import com.borikov.task3.composite.SymbolType;
+import com.borikov.task3.composite.SymbolLeafType;
 import com.borikov.task3.composite.TextComponent;
 import com.borikov.task3.composite.TextComponentType;
 import com.borikov.task3.composite.impl.SymbolLeaf;
@@ -28,16 +28,16 @@ public class LexemeAlphabetComparatorTest {
     @DataProvider(name = "comparePositiveData")
     public Object[][] createComparePositiveData() {
         TextComponent textComponent1 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf1 = new SymbolLeaf('a', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf1 = new SymbolLeaf('a', SymbolLeafType.LETTER);
         textComponent1.add(symbolLeaf1);
         TextComponent textComponent2 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf2 = new SymbolLeaf('b', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf2 = new SymbolLeaf('b', SymbolLeafType.LETTER);
         textComponent2.add(symbolLeaf2);
         TextComponent textComponent3 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf3 = new SymbolLeaf('A', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf3 = new SymbolLeaf('A', SymbolLeafType.LETTER);
         textComponent3.add(symbolLeaf3);
         TextComponent textComponent4 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf4 = new SymbolLeaf(',', SymbolType.PUNCTUATION);
+        SymbolLeaf symbolLeaf4 = new SymbolLeaf(',', SymbolLeafType.PUNCTUATION);
         textComponent4.add(symbolLeaf4);
         return new Object[][]{
                 {textComponent1, textComponent1, 0},
@@ -58,16 +58,16 @@ public class LexemeAlphabetComparatorTest {
     @DataProvider(name = "compareNegativeData")
     public Object[][] createCompareNegativeData() {
         TextComponent textComponent1 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf1 = new SymbolLeaf('a', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf1 = new SymbolLeaf('a', SymbolLeafType.LETTER);
         textComponent1.add(symbolLeaf1);
         TextComponent textComponent2 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf2 = new SymbolLeaf('b', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf2 = new SymbolLeaf('b', SymbolLeafType.LETTER);
         textComponent2.add(symbolLeaf2);
         TextComponent textComponent3 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf3 = new SymbolLeaf('A', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf3 = new SymbolLeaf('A', SymbolLeafType.LETTER);
         textComponent3.add(symbolLeaf3);
         TextComponent textComponent4 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf4 = new SymbolLeaf(',', SymbolType.PUNCTUATION);
+        SymbolLeaf symbolLeaf4 = new SymbolLeaf(',', SymbolLeafType.PUNCTUATION);
         textComponent4.add(symbolLeaf4);
         return new Object[][]{
                 {textComponent1, textComponent1, 1},

@@ -30,7 +30,7 @@ public class TextServiceImplTest {
 
     @DataProvider(name = "sortParagraphsByAmountOfSentencesPositiveData")
     public Object[][] createSortParagraphsByAmountOfSentencesPositiveData() {
-        TextParser textParser = new TextParser();
+        TextParser textParser = TextParser.getInstance();
         String text1 = "World hello. How are you? Im fine.\nOK?\nYes. Very ok!";
         String sortedText1 = "OK? \nYes. Very ok! \nWorld hello. " +
                 "How are you? Im fine. \n";
@@ -62,7 +62,7 @@ public class TextServiceImplTest {
 
     @DataProvider(name = "sortParagraphsByAmountOfSentencesNegativeData")
     public Object[][] createSortParagraphsByAmountOfSentencesNegativeData() {
-        TextParser textParser = new TextParser();
+        TextParser textParser = TextParser.getInstance();
         String text1 = "World hello. How are you? Im fine.\nOK?\nYes. Very ok!";
         String sortedText1 = "OK? \nYes. Very ok!\nWorld hello. " +
                 "How are you? Im fine. \n";
@@ -101,7 +101,7 @@ public class TextServiceImplTest {
 
     @DataProvider(name = "sortSentencesByMaxWordLengthPositiveData")
     public Object[][] createSortSentencesByMaxWordLengthPositiveData() {
-        ParagraphParser textParser = new ParagraphParser();
+        ParagraphParser textParser = ParagraphParser.getInstance();
         String text1 = "World hello. How are you? Im fine...";
         String sortedText1 = "How are you? Im fine... World hello. ";
         TextComponent textComponent1 = textParser.parse(text1);
@@ -132,7 +132,7 @@ public class TextServiceImplTest {
 
     @DataProvider(name = "sortSentencesByMaxWordLengthNegativeData")
     public Object[][] createSortSentencesByMaxWordLengthNegativeData() {
-        ParagraphParser textParser = new ParagraphParser();
+        ParagraphParser textParser = ParagraphParser.getInstance();
         String text1 = "World hello. How are you? Im fine...";
         String sortedText1 = "How are you? World hello. Im fine... ";
         TextComponent textComponent1 = textParser.parse(text1);
@@ -170,7 +170,7 @@ public class TextServiceImplTest {
 
     @DataProvider(name = "sortSentencesByMaxLexemeLengthPositiveData")
     public Object[][] createSortSentencesByMaxLexemeLengthPositiveData() {
-        ParagraphParser textParser = new ParagraphParser();
+        ParagraphParser textParser = ParagraphParser.getInstance();
         String text1 = "World hello. How are you? Im fine...";
         String sortedText1 = "How are you? World hello. Im fine... ";
         TextComponent textComponent1 = textParser.parse(text1);
@@ -201,7 +201,7 @@ public class TextServiceImplTest {
 
     @DataProvider(name = "sortSentencesByMaxLexemeLengthNegativeData")
     public Object[][] createSortSentencesByMaxLexemeLengthNegativeData() {
-        ParagraphParser textParser = new ParagraphParser();
+        ParagraphParser textParser = ParagraphParser.getInstance();
         String text1 = "World hello. How are you? Im fine...";
         String sortedText1 = "How are you? Im fine... World hello. ";
         TextComponent textComponent1 = textParser.parse(text1);
@@ -239,15 +239,15 @@ public class TextServiceImplTest {
 
     @DataProvider(name = "sortLexemesByEntryOfSymbolPositiveData")
     public Object[][] createSortLexemesByEntryOfSymbolPositiveData() {
-        SentenceParser textParser = new SentenceParser();
+        SentenceParser textParser = SentenceParser.getInstance();
         String text1 = "World hello world";
-        String sortedText1 = "World world hello ";
+        String sortedText1 = "hello World world ";
         TextComponent textComponent1 = textParser.parse(text1);
         String text2 = "a aAa baa aaa Aaa";
-        String sortedText2 = "a Aaa aAa baa aaa ";
+        String sortedText2 = "aaa Aaa aAa baa a ";
         TextComponent textComponent2 = textParser.parse(text2);
         String text3 = "Im fine";
-        String sortedText3 = "Im fine ";
+        String sortedText3 = "fine Im ";
         TextComponent textComponent3 = textParser.parse(text3);
         return new Object[][]{
                 {textComponent1, 'l', sortedText1},
@@ -270,15 +270,15 @@ public class TextServiceImplTest {
 
     @DataProvider(name = "sortLexemesByEntryOfSymbolNegativeData")
     public Object[][] createSortLexemesByEntryOfSymbolNegativeData() {
-        SentenceParser textParser = new SentenceParser();
+        SentenceParser textParser = SentenceParser.getInstance();
         String text1 = "World hello world";
-        String sortedText1 = "World world hello";
+        String sortedText1 = "hello World world";
         TextComponent textComponent1 = textParser.parse(text1);
         String text2 = "a aAa baa aaa Aaa";
-        String sortedText2 = "a Aaa aAa baa aaa\n";
+        String sortedText2 = "aaa Aaa aAa baa a\n";
         TextComponent textComponent2 = textParser.parse(text2);
         String text3 = "Im fine.";
-        String sortedText3 = "Im fine ";
+        String sortedText3 = "fine Im ";
         TextComponent textComponent3 = textParser.parse(text3);
         return new Object[][]{
                 {textComponent1, 'l', sortedText1},

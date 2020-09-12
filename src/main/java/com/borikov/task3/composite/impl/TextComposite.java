@@ -73,8 +73,12 @@ public class TextComposite implements TextComponent {
             sb.append(textComponent.toString());
             if (textComponent instanceof TextComposite) {
                 switch (textComponent.getTextComponentType()) {
-                    case PARAGRAPH -> sb.append(PARAGRAPH_DELIMITER);
-                    case LEXEME -> sb.append(LEXEME_DELIMITER);
+                    case PARAGRAPH:
+                        sb.append(PARAGRAPH_DELIMITER);
+                        break;
+                    case LEXEME:
+                        sb.append(LEXEME_DELIMITER);
+                        break;
                 }
             }
         }

@@ -1,6 +1,6 @@
 package com.borikov.task3.comparator;
 
-import com.borikov.task3.composite.SymbolType;
+import com.borikov.task3.composite.SymbolLeafType;
 import com.borikov.task3.composite.TextComponent;
 import com.borikov.task3.composite.impl.SymbolLeaf;
 
@@ -24,7 +24,7 @@ public class SentenceMaxWordLengthComparator implements Comparator<TextComponent
                 max(Comparator.comparing(t -> t.getTextComponents()
                         .stream().filter(t1 -> t1 instanceof SymbolLeaf)
                         .map(t2 -> (SymbolLeaf) t2)
-                        .filter(t3 -> t3.getSymbolType() == SymbolType.LETTER)
+                        .filter(t3 -> t3.getSymbolType() == SymbolLeafType.LETTER)
                         .count())).get();
         return maxWord;
     }
@@ -33,7 +33,7 @@ public class SentenceMaxWordLengthComparator implements Comparator<TextComponent
         int length = (int) word.getTextComponents().stream()
                 .filter(t1 -> t1 instanceof SymbolLeaf)
                 .map(t2 -> (SymbolLeaf) t2)
-                .filter(t3 -> t3.getSymbolType() == SymbolType.LETTER)
+                .filter(t3 -> t3.getSymbolType() == SymbolLeafType.LETTER)
                 .count();
         return length;
     }

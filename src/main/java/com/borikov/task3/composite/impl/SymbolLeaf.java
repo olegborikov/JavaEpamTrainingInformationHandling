@@ -1,6 +1,6 @@
 package com.borikov.task3.composite.impl;
 
-import com.borikov.task3.composite.SymbolType;
+import com.borikov.task3.composite.SymbolLeafType;
 import com.borikov.task3.composite.TextComponent;
 import com.borikov.task3.composite.TextComponentType;
 import org.apache.logging.log4j.Level;
@@ -12,19 +12,19 @@ import java.util.List;
 public class SymbolLeaf implements TextComponent {
     private static final Logger LOGGER = LogManager.getLogger();
     private final char symbol;
-    private final SymbolType symbolType;
+    private final SymbolLeafType symbolLeafType;
 
-    public SymbolLeaf(char symbol, SymbolType symbolType) {
+    public SymbolLeaf(char symbol, SymbolLeafType symbolLeafType) {
         this.symbol = symbol;
-        this.symbolType = symbolType;
+        this.symbolLeafType = symbolLeafType;
     }
 
     public char getSymbol() {
         return symbol;
     }
 
-    public SymbolType getSymbolType() {
-        return symbolType;
+    public SymbolLeafType getSymbolType() {
+        return symbolLeafType;
     }
 
     @Override
@@ -72,13 +72,13 @@ public class SymbolLeaf implements TextComponent {
         if (symbol != symbolLeaf.symbol) {
             return false;
         }
-        return symbolType == symbolLeaf.symbolType;
+        return symbolLeafType == symbolLeaf.symbolLeafType;
     }
 
     @Override
     public int hashCode() {
         int result = symbol;
-        result = 31 * result + (symbolType != null ? symbolType.hashCode() : 0);
+        result = 31 * result + (symbolLeafType != null ? symbolLeafType.hashCode() : 0);
         return result;
     }
 

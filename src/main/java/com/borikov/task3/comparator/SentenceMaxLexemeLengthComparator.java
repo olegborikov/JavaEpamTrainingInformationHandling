@@ -17,8 +17,8 @@ public class SentenceMaxLexemeLengthComparator implements Comparator<TextCompone
     }
 
     private TextComponent getMaxLexeme(List<TextComponent> lexemes) {
-        TextComponent maxLexeme = lexemes.stream().
-                max(Comparator.comparing(t -> t.getTextComponents().size())).get();
+        TextComponent maxLexeme = lexemes.stream()
+                .max(Comparator.comparing(t -> t.getTextComponents().size())).get();
         return maxLexeme;
     }
 }

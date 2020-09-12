@@ -11,8 +11,7 @@ import javax.script.ScriptException;
 public class LexemeInterpreter {
     private static final String ENGINE_NAME = "js";
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final String EXPRESSION_REGEX =
-            "^[(]?[-]?([0-9]+)[)]??([(]?([-+/*]([0-9]))?([.,][0-9]+)?[)]?)*$";
+    private static final String EXPRESSION_REGEX = ".*\\d.*";
 
     public String interpretLexeme(String lexeme) {
         String expressionSolution = lexeme;
@@ -21,7 +20,8 @@ public class LexemeInterpreter {
                 ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
                 ScriptEngine engine =
                         scriptEngineManager.getEngineByExtension(ENGINE_NAME);
-                expressionSolution = engine.eval(lexeme).toString();
+                Object solution = engine.eval(lexeme);
+                expressionSolution = solution.toString();
             } catch (ScriptException e) {
                 LOGGER.log(Level.WARN, "Error with lexeme expression", e);
             }

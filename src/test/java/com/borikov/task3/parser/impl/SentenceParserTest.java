@@ -1,6 +1,6 @@
 package com.borikov.task3.parser.impl;
 
-import com.borikov.task3.composite.SymbolType;
+import com.borikov.task3.composite.SymbolLeafType;
 import com.borikov.task3.composite.TextComponent;
 import com.borikov.task3.composite.TextComponentType;
 import com.borikov.task3.composite.impl.SymbolLeaf;
@@ -17,7 +17,7 @@ public class SentenceParserTest {
 
     @BeforeClass
     public void setUp() {
-        sentenceParser = new SentenceParser();
+        sentenceParser = SentenceParser.getInstance();
     }
 
     @AfterClass
@@ -26,14 +26,14 @@ public class SentenceParserTest {
     }
 
     @Test
-    public void parsePositiveText() {
+    public void parsePositiveTest() {
         TextComponent textComponent1 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf1 = new SymbolLeaf('H', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf2 = new SymbolLeaf('e', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf3 = new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf4 = new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf5 = new SymbolLeaf('o', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf6 = new SymbolLeaf(',', SymbolType.PUNCTUATION);
+        SymbolLeaf symbolLeaf1 = new SymbolLeaf('H', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf2 = new SymbolLeaf('e', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf3 = new SymbolLeaf('l', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf4 = new SymbolLeaf('l', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf5 = new SymbolLeaf('o', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf6 = new SymbolLeaf(',', SymbolLeafType.PUNCTUATION);
         textComponent1.add(symbolLeaf1);
         textComponent1.add(symbolLeaf2);
         textComponent1.add(symbolLeaf3);
@@ -41,12 +41,12 @@ public class SentenceParserTest {
         textComponent1.add(symbolLeaf5);
         textComponent1.add(symbolLeaf6);
         TextComponent textComponent2 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf7 = new SymbolLeaf('w', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf8 = new SymbolLeaf('o', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf9 = new SymbolLeaf('r', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf10 = new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf11 = new SymbolLeaf('d', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf12 = new SymbolLeaf('.', SymbolType.PUNCTUATION);
+        SymbolLeaf symbolLeaf7 = new SymbolLeaf('w', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf8 = new SymbolLeaf('o', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf9 = new SymbolLeaf('r', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf10 = new SymbolLeaf('l', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf11 = new SymbolLeaf('d', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf12 = new SymbolLeaf('.', SymbolLeafType.PUNCTUATION);
         textComponent2.add(symbolLeaf7);
         textComponent2.add(symbolLeaf8);
         textComponent2.add(symbolLeaf9);
@@ -62,24 +62,24 @@ public class SentenceParserTest {
     }
 
     @Test
-    public void parseNegativeText() {
+    public void parseNegativeTest() {
         TextComponent textComponent1 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf1 = new SymbolLeaf('H', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf2 = new SymbolLeaf('e', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf3 = new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf4 = new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf5 = new SymbolLeaf('o', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf1 = new SymbolLeaf('H', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf2 = new SymbolLeaf('e', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf3 = new SymbolLeaf('l', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf4 = new SymbolLeaf('l', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf5 = new SymbolLeaf('o', SymbolLeafType.LETTER);
         textComponent1.add(symbolLeaf1);
         textComponent1.add(symbolLeaf2);
         textComponent1.add(symbolLeaf3);
         textComponent1.add(symbolLeaf4);
         textComponent1.add(symbolLeaf5);
         TextComponent textComponent2 = new TextComposite(TextComponentType.LEXEME);
-        SymbolLeaf symbolLeaf7 = new SymbolLeaf('w', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf8 = new SymbolLeaf('o', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf9 = new SymbolLeaf('r', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf10 = new SymbolLeaf('l', SymbolType.LETTER);
-        SymbolLeaf symbolLeaf11 = new SymbolLeaf('d', SymbolType.LETTER);
+        SymbolLeaf symbolLeaf7 = new SymbolLeaf('w', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf8 = new SymbolLeaf('o', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf9 = new SymbolLeaf('r', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf10 = new SymbolLeaf('l', SymbolLeafType.LETTER);
+        SymbolLeaf symbolLeaf11 = new SymbolLeaf('d', SymbolLeafType.LETTER);
         textComponent2.add(symbolLeaf7);
         textComponent2.add(symbolLeaf8);
         textComponent2.add(symbolLeaf9);
